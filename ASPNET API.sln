@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNET API", "ASPNET API\ASPNET API.csproj", "{B72B95C1-97E8-4B36-A104-39B0E88FCBE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM32 = Debug|ARM32
+		Debug|ARM64 = Debug|ARM64
+		Debug|x86 = Debug|x86
+		Debug|x86 32 = Debug|x86 32
+		Release|Any CPU = Release|Any CPU
+		Release|ARM32 = Release|ARM32
+		Release|ARM64 = Release|ARM64
+		Release|x86 = Release|x86
+		Release|x86 32 = Release|x86 32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B72B95C1-97E8-4B36-A104-39B0E88FCBE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B72B95C1-97E8-4B36-A104-39B0E88FCBE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B72B95C1-97E8-4B36-A104-39B0E88FCBE7}.Debug|ARM32.ActiveCfg = Debug|ARM32
+		{B72B95C1-97E8-4B36-A104-39B0E88FCBE7}.Debug|ARM32.Build.0 = Debug|ARM32
+		{B72B95C1-97E8-4B36-A104-39B0E88FCBE7}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{B72B95C1-97E8-4B36-A104-39B0E88FCBE7}.Debug|x86.ActiveCfg = Debug|x86
+		{B72B95C1-97E8-4B36-A104-39B0E88FCBE7}.Debug|x86.Build.0 = Debug|x86
+		{B72B95C1-97E8-4B36-A104-39B0E88FCBE7}.Debug|x86 32.ActiveCfg = Debug|ARM32
+		{B72B95C1-97E8-4B36-A104-39B0E88FCBE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B72B95C1-97E8-4B36-A104-39B0E88FCBE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B72B95C1-97E8-4B36-A104-39B0E88FCBE7}.Release|ARM32.ActiveCfg = Release|ARM32
+		{B72B95C1-97E8-4B36-A104-39B0E88FCBE7}.Release|ARM32.Build.0 = Release|ARM32
+		{B72B95C1-97E8-4B36-A104-39B0E88FCBE7}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{B72B95C1-97E8-4B36-A104-39B0E88FCBE7}.Release|x86.ActiveCfg = Release|x86
+		{B72B95C1-97E8-4B36-A104-39B0E88FCBE7}.Release|x86.Build.0 = Release|x86
+		{B72B95C1-97E8-4B36-A104-39B0E88FCBE7}.Release|x86 32.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98A7621E-C7A4-47B7-84F4-C68AC6B32CE7}
+	EndGlobalSection
+EndGlobal
