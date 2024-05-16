@@ -5,7 +5,7 @@ using ASPNET_API.Conexoes.Utils;
 
 namespace ASPNET_API.Inicializar
 {
-    public class LoginCaviuna
+    public class LemonLogin
     {
         static public DataSet logar(string usuario, string senha)
         {

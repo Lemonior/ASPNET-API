@@ -12,7 +12,7 @@ namespace ASPNET_API.Data
         public static IDbConnection GetDefaultConnection()
         {
             //pegando banco de dados dentro da pasta da applicacao
-            string LocalBancoDados = @"C:\CaviunaWsDB\Caviuna.mdb";
+            string LocalBancoDados = @"C:\WsDB\Database.mdb";
             //montando a string de conexão
             string strCon = @"Provider=Microsoft.JET.OLEDB.4.0;Persist Security Info = False; Data Source = " + LocalBancoDados + ";Jet OLEDB:Database Password=e05vg20kpm!";
             var connection = new OleDbConnection(strCon);

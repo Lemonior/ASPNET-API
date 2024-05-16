@@ -14,12 +14,12 @@ namespace ASPNET_API.Inicializar
     {
         public static void Login(int CodEmpresa)
         {
-            string usuario = "romualdo";
+            string usuario = "Lemon";
             string senha="HSP";
             //////
 
             //fazendo login e trazendo o nome completo do usuario
-            DataSet ds = LoginCaviuna.logar(usuario, senha);
+            DataSet ds = LemonLogin.logar(usuario, senha);
             //se a quantidade de registros for diferente de 0 (usuario valido)
             if (ds.Tables[0].Rows.Count != 0)
             {
@@ -37,7 +37,7 @@ namespace ASPNET_API.Inicializar
 
 
                 //empresa nome
-                string Empresa_D = LoginCaviuna.NomeEmpresa(CodEmpresa);
+                string Empresa_D = LemonLogin.NomeEmpresa(CodEmpresa);
                 Config.Default.G_Empresa_Nome = Empresa_D;
 
 
@@ -49,8 +49,8 @@ namespace ASPNET_API.Inicializar
 
     public class Inicializar
     {
-        //string diretorio_dll = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) + "\\Caviuna\\";
-        //int ponteiroCaviunaNew = 0;//utilizado para saber qual dll está baixando.
+        //string diretorio_dll = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) + "\\Lemon\\";
+        //int ponteiroLemonNew = 0;//utilizado para saber qual dll está baixando.
 
         //vai fazer o preenchimento das variaveis de sistema.
 
@@ -62,12 +62,12 @@ namespace ASPNET_API.Inicializar
             //Negocio.Configuracao.Config.Default.G_PerguntaFecharAplicacao = true;
             Config.Default.G_Sistema_pasta = System.AppDomain.CurrentDomain.BaseDirectory.ToString();
             Config.Default.G_SistemaCpuCod = "BFEBFBFF000306C3";
-            Config.Default.G_Ma_IdUsuario_codCliente = LoginCaviuna.Cliente_Codigo();
+            Config.Default.G_Ma_IdUsuario_codCliente = LemonLogin.Cliente_Codigo();
             Config.Default.G_SistemaPLacaMaeSerial = "NBM7411001425041BE7200";
             Config.Default.G_Certificadora_webservice_teste = webService_teste();
             Config.Default.G_SistemaNomeMaquina = NomeMaquina();
             Config.Default.G_SistemaServidorClienteName = MaquinaServidorClienteName();
-            Config.Default.G_CaminhoArquivosDLL = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) + "\\Caviuna\\";
+            Config.Default.G_CaminhoArquivosDLL = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) + "\\Lemon\\";
 
             Config.Default.G_LastDigits = new Random().Next(0, 999);
 
@@ -85,7 +85,7 @@ namespace ASPNET_API.Inicializar
             Config.Default.G_PastaTemporaria = CreateTempFolder();
 
 
-            Config.Default.isRomualdo = (Config.Default.G_Usuario.ToLower() == "romualdo");
+            Config.Default.isLemon = (Config.Default.G_Usuario.ToLower() == "Lemon");
             Config.Default.runAsAdministrator = true;
         }
 
@@ -114,7 +114,7 @@ namespace ASPNET_API.Inicializar
         {
             try
             {
-                return (Configuracoes.Config.Default.G_Usuario.ToLower() == "romualdo" || Configuracoes.Config.Default.G_Usuario.ToLower() == "wsteste");
+                return (Configuracoes.Config.Default.G_Usuario.ToLower() == "Lemon" || Configuracoes.Config.Default.G_Usuario.ToLower() == "wsteste");
             }
             catch (Exception)
             {

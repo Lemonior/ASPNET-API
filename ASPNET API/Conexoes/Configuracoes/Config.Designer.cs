@@ -50,7 +50,7 @@ namespace ASPNET_API.Configuracoes {
 
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Caviuna")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Lemon")]
         public string G_Sistema
         {
             get
@@ -846,15 +846,15 @@ namespace ASPNET_API.Configuracoes {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool isRomualdo
+        public bool isLemon
         {
             get
             {
-                return ((bool)(this["isRomualdo"]));
+                return ((bool)(this["isLemon"]));
             }
             set
             {
-                this["isRomualdo"] = value;
+                this["isLemon"] = value;
             }
         }
 

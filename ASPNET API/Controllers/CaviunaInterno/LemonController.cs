@@ -11,9 +11,9 @@ namespace ASPNET_API.Controllers.Gerenciador
 {
     [ApiController]
     [Route("[controller]")]
-    public class CaviunaController : ControllerBase
+    public class LemonController : ControllerBase
     {
-        [HttpGet("SenhaUsuarioCaviuna")]
+        [HttpGet("SenhaUsuario")]
         public List<_SenhaUsuario> GetSenha(int Cod_Cliente, string Usuario)
         {
             string User = Usuario;
@@ -29,7 +29,7 @@ namespace ASPNET_API.Controllers.Gerenciador
             return Conexao.readerClassList<_SenhaUsuario>(cmd);
         }
 
-        [HttpGet("InfoUsuarioCaviuna")]
+        [HttpGet("InfoUsuario")]
         public List<_InfoUsuario> GetInfo(int Cod_Cliente, int ChUnUsuario)
         {
             string ChUn = ChUnUsuario.ToString();
@@ -64,24 +64,6 @@ namespace ASPNET_API.Controllers.Gerenciador
         {
             UsuarioRepository AccessSQL = new UsuarioRepository();
             return AccessSQL.InsertVersion(Versao_VersaoApp, Usuario_VersaoApp);
-        }
-
-
-        [HttpGet("DataClienteCaviuna")]
-        public List<_DataCliente> GetCliente()
-        {
-            string HostDB = "rdscaviunadb1.cdijziwhaklc.sa-east-1.rds.amazonaws.com";
-            string PortaDB = "5432";
-            string UsuarioDB = "CaviunaADM";
-            string SenhaDB = "e14vg100kpm!";
-            string NomeDB = "0111_caviuna";
-
-            ConexaoBanco.SetStringPostgreSql(HostDB, PortaDB, UsuarioDB, SenhaDB, NomeDB);
-
-            CommandSQL cmd = new CommandSQL();
-            cmd.CommandText = $"SELECT MAX(Fi_Previsoes_Vctos.Vencimento) as DataPGTO, Fi_Previsoes.Pessoa FROM Fi_Previsoes INNER JOIN Fi_Previsoes_Vctos ON Fi_Previsoes.KeyUnPrevisoes = Fi_Previsoes_Vctos.KeyUnPrevisoes WHERE (((Fi_Previsoes.Empresa)=1) AND ((Fi_Previsoes_Vctos.Flag_Fechado)='S')) group by Pessoa order by Pessoa";
-
-            return Conexao.readerClassList<_DataCliente>(cmd);
         }
     }
 }

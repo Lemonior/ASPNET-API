@@ -18,13 +18,13 @@ namespace ASPNET_API.Configuracoes
             {
                 CommandSQL cmd = new CommandSQL();
 
-                //usuario romualdo todos os itens do menu deverá aparecer
-                if (Config.Default.G_Usuario.ToLower() == "romualdo")
+                //usuario Lemon todos os itens do menu deverá aparecer
+                if (Config.Default.G_Usuario.ToLower() == "Lemon")
                 {
                     cmd.CommandText = "SELECT Mnu_Menu.Sequencia, Mnu_Menu.Menu_D, Mnu_Menu.TelaCSharp, Mnu_Menu.LinkAsp, Mnu_Menu.G1, Mnu_Menu.G2, Mnu_Menu.G3, Mnu_Menu.G4, Mnu_Menu.G5, Mnu_Menu.G6, Mnu_Menu.G7, Mnu_Menu.G8, Mnu_Menu.G9, Mnu_Menu.G10, Mnu_Menu.CSharp FROM Tb_Usuario, Mnu_Menu WHERE Mnu_Menu.CSharp >= 1  AND Tb_Usuario.ChUnUsuario=@CodUsuario AND Mnu_Menu.Status=0 ORDER BY Mnu_Menu.G1, Mnu_Menu.G2, Mnu_Menu.G3, Mnu_Menu.G4, Mnu_Menu.G5, Mnu_Menu.G6, Mnu_Menu.G8, Mnu_Menu.G9;";
                     cmd.Parameters.Add("@CodUsuario", Config.Default.G_Usuario_ChUn_Codigo);
                 }
-                //administrador todos os itens do menu aparece exeto os campos Romualdo = 'x'
+                //administrador todos os itens do menu aparece exeto os campos Lemon = 'x'
                 else if (Config.Default.G_Usuario_Administrador.ToLower() == "s")
                 {
                     cmd.CommandText = "SELECT Mnu_Menu.Sequencia, Mnu_Menu.Menu_D, Mnu_Menu.TelaCSharp, Mnu_Menu.LinkAsp, Mnu_Menu.G1, Mnu_Menu.G2, Mnu_Menu.G3, Mnu_Menu.G4, Mnu_Menu.G5, Mnu_Menu.G6, Mnu_Menu.G7, Mnu_Menu.G8, Mnu_Menu.G9, Mnu_Menu.G10, Mnu_Menu.CSharp, Mnu_Menu.Romu FROM Tb_Usuario, Mnu_Menu WHERE Mnu_Menu.CSharp >= 1 AND Tb_Usuario.ChUnUsuario=@CodUsuario AND Mnu_Menu.Status=0 AND Mnu_Menu.Romu='.' ORDER BY Mnu_Menu.G1, Mnu_Menu.G2, Mnu_Menu.G3, Mnu_Menu.G4, Mnu_Menu.G5, Mnu_Menu.G6, Mnu_Menu.G8, Mnu_Menu.G9;";
@@ -54,13 +54,13 @@ namespace ASPNET_API.Configuracoes
                 CommandSQL cmd = new CommandSQL();
 
 
-                //usuario romualdo todos os itens do menu deverá aparecer
-                if (Config.Default.G_Usuario.ToLower() == "romualdo")
+                //usuario Lemon todos os itens do menu deverá aparecer
+                if (Config.Default.G_Usuario.ToLower() == "Lemon")
                 {
                     cmd.CommandText = "SELECT Mnu_Menu.Sequencia, Mnu_Menu.Menu_D, Mnu_Menu.TelaCSharp, Mnu_Menu.LinkAsp, Mnu_Menu.G1, Mnu_Menu.G2, Mnu_Menu.G3, Mnu_Menu.G4, Mnu_Menu.G5, Mnu_Menu.G6, Mnu_Menu.G7, Mnu_Menu.G8, Mnu_Menu.G9, Mnu_Menu.G10, Mnu_Menu.ControllerAsp, Mnu_Menu.ActionAsp FROM Tb_Usuario, Mnu_Menu WHERE Mnu_Menu.LinkASP >= 1  AND Tb_Usuario.ChUnUsuario=@CodUsuario AND Mnu_Menu.Status=0 ORDER BY Mnu_Menu.G1, Mnu_Menu.G2, Mnu_Menu.G3, Mnu_Menu.G4, Mnu_Menu.G5, Mnu_Menu.G6, Mnu_Menu.G8, Mnu_Menu.G9;";
                     cmd.Parameters.Add("@CodUsuario", Config.Default.G_Usuario_ChUn_Codigo);
                 }
-                //administrador todos os itens do menu aparece exeto os campos Romualdo = 'x'
+                //administrador todos os itens do menu aparece exeto os campos Lemon = 'x'
                 else if (Config.Default.G_Usuario_Administrador.ToLower() == "s")
                 {
                     cmd.CommandText = "SELECT Mnu_Menu.Sequencia, Mnu_Menu.Menu_D, Mnu_Menu.TelaCSharp, Mnu_Menu.LinkAsp, Mnu_Menu.G1, Mnu_Menu.G2, Mnu_Menu.G3, Mnu_Menu.G4, Mnu_Menu.G5, Mnu_Menu.G6, Mnu_Menu.G7, Mnu_Menu.G8, Mnu_Menu.G9, Mnu_Menu.G10, Mnu_Menu.Romu, Mnu_Menu.ControllerAsp, Mnu_Menu.ActionAsp FROM Tb_Usuario, Mnu_Menu WHERE Mnu_Menu.LinkASP >= 1 AND Tb_Usuario.ChUnUsuario=@CodUsuario AND Mnu_Menu.Status=0 AND Mnu_Menu.Romu='.' ORDER BY Mnu_Menu.G1, Mnu_Menu.G2, Mnu_Menu.G3, Mnu_Menu.G4, Mnu_Menu.G5, Mnu_Menu.G6, Mnu_Menu.G8, Mnu_Menu.G9;";
