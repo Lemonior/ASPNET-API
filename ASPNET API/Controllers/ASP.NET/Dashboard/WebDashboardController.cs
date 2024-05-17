@@ -15,7 +15,7 @@ namespace ASPNET_API.Controllers.ASP.NET.Dashboard
     public class DashboardController : ControllerBase
     {
         [HttpGet("GraficoFazenda")]
-        public List<_Fazenda> GetSetor(int Cod_Cliente, int Cod_Grupo)
+        public List<_Fazenda> GetSetor(int LemonID, int Cod_Grupo)
         {
             string Cod = Cod_Grupo.ToString();
             if (Cod == "0")
@@ -24,7 +24,7 @@ namespace ASPNET_API.Controllers.ASP.NET.Dashboard
             }
             //Get ConnectionString from access database
             ASP_UsuarioRepository AccessSQL = new ASP_UsuarioRepository();
-            AccessSQL.GetConnString(Cod_Cliente);
+            AccessSQL.GetConnString(LemonID);
 
             ConexaoBanco.SetStringPostgreSql(AccessSQL.HostBD, AccessSQL.PortaBD, AccessSQL.UsuarioBD, AccessSQL.SenhaBD, AccessSQL.NomeBD);
 
@@ -34,7 +34,7 @@ namespace ASPNET_API.Controllers.ASP.NET.Dashboard
             return Conexao.readerClassList<_Fazenda>(cmd);
         }
         [HttpGet("GraficoMovimentacao")]
-        public List<_Movimentacao> GetMov(int Cod_Cliente)
+        public List<_Movimentacao> GetMov(int LemonID)
         {
             string Hoje = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             string InicioAno = DateTime.Now.AddDays(-DateTime.Now.DayOfYear).AddSeconds(-DateTime.Now.TimeOfDay.TotalSeconds + 1).AddHours(24).ToString("yyyy-MM-dd HH:mm:ss");
@@ -42,7 +42,7 @@ namespace ASPNET_API.Controllers.ASP.NET.Dashboard
             string AnoRetrasadoinicial = DateTime.Now.AddDays(-DateTime.Now.DayOfYear).AddSeconds(-DateTime.Now.TimeOfDay.TotalSeconds + 1).AddHours(24).AddYears(-2).ToString("yyyy-MM-dd HH:mm:ss");
             //Get ConnectionString from access database
             ASP_UsuarioRepository AccessSQL = new ASP_UsuarioRepository();
-            AccessSQL.GetConnString(Cod_Cliente);
+            AccessSQL.GetConnString(LemonID);
 
             ConexaoBanco.SetStringPostgreSql(AccessSQL.HostBD, AccessSQL.PortaBD, AccessSQL.UsuarioBD, AccessSQL.SenhaBD, AccessSQL.NomeBD);
 
@@ -85,7 +85,7 @@ namespace ASPNET_API.Controllers.ASP.NET.Dashboard
         }
 
         [HttpGet("GraficoRaca")]
-        public List<_Raca> GetRaca(int Cod_Cliente, int Cod_Grupo)
+        public List<_Raca> GetRaca(int LemonID, int Cod_Grupo)
         {
             string Cod = Cod_Grupo.ToString();
             if (Cod == "0")
@@ -94,7 +94,7 @@ namespace ASPNET_API.Controllers.ASP.NET.Dashboard
             }
             //Get ConnectionString from access database
             ASP_UsuarioRepository AccessSQL = new ASP_UsuarioRepository();
-            AccessSQL.GetConnString(Cod_Cliente);
+            AccessSQL.GetConnString(LemonID);
 
             ConexaoBanco.SetStringPostgreSql(AccessSQL.HostBD, AccessSQL.PortaBD, AccessSQL.UsuarioBD, AccessSQL.SenhaBD, AccessSQL.NomeBD);
 
@@ -113,7 +113,7 @@ namespace ASPNET_API.Controllers.ASP.NET.Dashboard
         }
 
         [HttpGet("GraficoSexo")]
-        public List<_Sexo> GetSexo(int Cod_Cliente, int Cod_Grupo)
+        public List<_Sexo> GetSexo(int LemonID, int Cod_Grupo)
         {
             string Cod = Cod_Grupo.ToString();
             if (Cod == "0")
@@ -122,7 +122,7 @@ namespace ASPNET_API.Controllers.ASP.NET.Dashboard
             }
             //Get ConnectionString from access database
             ASP_UsuarioRepository AccessSQL = new ASP_UsuarioRepository();
-            AccessSQL.GetConnString(Cod_Cliente);
+            AccessSQL.GetConnString(LemonID);
 
             ConexaoBanco.SetStringPostgreSql(AccessSQL.HostBD, AccessSQL.PortaBD, AccessSQL.UsuarioBD, AccessSQL.SenhaBD, AccessSQL.NomeBD);
 

@@ -17,12 +17,12 @@ namespace ASPNET_API.Controllers
     public class ConnectionController : ControllerBase
     {
         [HttpGet(Name = "GetConnectionString")]
-        public IEnumerable<_ConnectionString> GetString(int Cod_Cliente)
+        public IEnumerable<_ConnectionString> GetString(int LemonID)
         {
             //Get ConnectionString from access database
             ASP_UsuarioRepository AccessSQL = new ASP_UsuarioRepository();
             _ConnectionString Parameter = new _ConnectionString();
-            AccessSQL.GetConnString(Cod_Cliente);
+            AccessSQL.GetConnString(LemonID);
             Parameter.Database = AccessSQL.NomeBD;
             Parameter.Host = AccessSQL.HostBD;
             Parameter.Porta = AccessSQL.PortaBD;

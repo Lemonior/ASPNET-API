@@ -19,11 +19,11 @@ namespace ASPNET_API.Controllers.ASP.NET.Relatorios
     public class RelatoriosController : ControllerBase
     {
         [HttpGet("PosAnim")]
-        public List<_RelGer> Get(int Cod_Cliente, string VG1, string VG2, string VG3, int? VF1, string? VF2, string? VF3, string? VF4, DateTime _Data, int EMP)
+        public List<_RelGer> Get(int LemonID, string VG1, string VG2, string VG3, int? VF1, string? VF2, string? VF3, string? VF4, DateTime _Data, int EMP)
         {
             //Get ConnectionString from access database
             ASP_UsuarioRepository AccessSQL = new ASP_UsuarioRepository();
-            AccessSQL.GetConnString(Cod_Cliente);
+            AccessSQL.GetConnString(LemonID);
 
             ConexaoBanco.SetStringPostgreSql(AccessSQL.HostBD, AccessSQL.PortaBD, AccessSQL.UsuarioBD, AccessSQL.SenhaBD, AccessSQL.NomeBD);
 

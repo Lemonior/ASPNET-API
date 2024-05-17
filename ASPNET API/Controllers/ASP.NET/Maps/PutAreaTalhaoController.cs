@@ -17,11 +17,11 @@ namespace ASPNET_API.Controllers.ASP.NET.Maps
     //public class PutAreaTalhaoController //: ControllerBase
     //{
     //    [HttpPut("PutAreaTalhao2")]
-    //    public List<_CadAreaTalhao> PutAreaTalhao(int Cod_Cliente, int Cod_Grupo, string Usuario, [FromBody] string[] Lat, [FromBody] string[] Lng, int Setor, int Chun_CadTalhao, string TalhaoCor)
+    //    public List<_CadAreaTalhao> PutAreaTalhao(int LemonID, int Cod_Grupo, string Usuario, [FromBody] string[] Lat, [FromBody] string[] Lng, int Setor, int Chun_CadTalhao, string TalhaoCor)
     //    {
     //        //Get ConnectionString from access database
     //        ASP_UsuarioRepository AccessSQL = new ASP_UsuarioRepository();
-    //        AccessSQL.GetConnString(Cod_Cliente);
+    //        AccessSQL.GetConnString(LemonID);
     //        List<string> TesteLat = new List<string>();
     //        List<string> TesteLng = new List<string>();
     //        List<int> Ordem_Cadastro = new List<int>();

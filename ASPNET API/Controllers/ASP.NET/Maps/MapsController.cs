@@ -17,7 +17,7 @@ namespace ASPNET_API.Controllers.Maps
     public class MapsController : ControllerBase
     {
         [HttpGet("Geolocalizacao")]
-        public List<_Coordenadas> GetGeoLoco(int Cod_Cliente, string? Talhao, string Fazenda, string Empresa)
+        public List<_Coordenadas> GetGeoLoco(int LemonID, string? Talhao, string Fazenda, string Empresa)
         {
             if (Talhao == null)
             {
@@ -30,7 +30,7 @@ namespace ASPNET_API.Controllers.Maps
 
             //Get ConnectionString from access database
             ASP_UsuarioRepository AccessSQL = new ASP_UsuarioRepository();
-            AccessSQL.GetConnString(Cod_Cliente);
+            AccessSQL.GetConnString(LemonID);
 
             ConexaoBanco.SetStringPostgreSql(AccessSQL.HostBD, AccessSQL.PortaBD, AccessSQL.UsuarioBD, AccessSQL.SenhaBD, AccessSQL.NomeBD);
 
@@ -87,7 +87,7 @@ namespace ASPNET_API.Controllers.Maps
         }
 
         [HttpGet("UltCadastro")]
-        public List<_UltCadastro> UltCadastro(int Cod_Cliente, string? Fazenda, string? Empresa)
+        public List<_UltCadastro> UltCadastro(int LemonID, string? Fazenda, string? Empresa)
         {
             string? Emp = Empresa;
             string? Faz = Fazenda;
@@ -102,7 +102,7 @@ namespace ASPNET_API.Controllers.Maps
 
             //Get ConnectionString from access database
             ASP_UsuarioRepository AccessSQL = new ASP_UsuarioRepository();
-            AccessSQL.GetConnString(Cod_Cliente);
+            AccessSQL.GetConnString(LemonID);
 
             ConexaoBanco.SetStringPostgreSql(AccessSQL.HostBD, AccessSQL.PortaBD, AccessSQL.UsuarioBD, AccessSQL.SenhaBD, AccessSQL.NomeBD);
 
@@ -113,11 +113,11 @@ namespace ASPNET_API.Controllers.Maps
         }
 
         [HttpGet("PosAnim")]
-        public List<_PosAnim> PosAnim(int Cod_Cliente)
+        public List<_PosAnim> PosAnim(int LemonID)
         {
             //Get ConnectionString from access database
             ASP_UsuarioRepository AccessSQL = new ASP_UsuarioRepository();
-            AccessSQL.GetConnString(Cod_Cliente);
+            AccessSQL.GetConnString(LemonID);
 
             ConexaoBanco.SetStringPostgreSql(AccessSQL.HostBD, AccessSQL.PortaBD, AccessSQL.UsuarioBD, AccessSQL.SenhaBD, AccessSQL.NomeBD);
 
@@ -127,7 +127,7 @@ namespace ASPNET_API.Controllers.Maps
         }
 
         [HttpGet("CadastroTalhao")]
-        public List<_CadTalhao> CadTalhao(int Cod_Cliente, string? Fazenda, string? Empresa)
+        public List<_CadTalhao> CadTalhao(int LemonID, string? Fazenda, string? Empresa)
         {
             string? Emp = Empresa;
             string? Faz = Fazenda;
@@ -142,7 +142,7 @@ namespace ASPNET_API.Controllers.Maps
 
             //Get ConnectionString from access database
             ASP_UsuarioRepository AccessSQL = new ASP_UsuarioRepository();
-            AccessSQL.GetConnString(Cod_Cliente);
+            AccessSQL.GetConnString(LemonID);
 
             ConexaoBanco.SetStringPostgreSql(AccessSQL.HostBD, AccessSQL.PortaBD, AccessSQL.UsuarioBD, AccessSQL.SenhaBD, AccessSQL.NomeBD);
 
@@ -152,10 +152,10 @@ namespace ASPNET_API.Controllers.Maps
         }
 
         [HttpDelete("DelTalhao")]
-        public List<_DelTalhao> DelTalhao(int Cod_Cliente, string? Talhao)
+        public List<_DelTalhao> DelTalhao(int LemonID, string? Talhao)
         {
             ASP_UsuarioRepository AccessSQL = new ASP_UsuarioRepository();
-            AccessSQL.GetConnString(Cod_Cliente);
+            AccessSQL.GetConnString(LemonID);
 
             ConexaoBanco.SetStringPostgreSql(AccessSQL.HostBD, AccessSQL.PortaBD, AccessSQL.UsuarioBD, AccessSQL.SenhaBD, AccessSQL.NomeBD);
 
@@ -165,7 +165,7 @@ namespace ASPNET_API.Controllers.Maps
         }
 
         [HttpGet("CadastroPasto")]
-        public List<_CadPasto> CadPasto(int Cod_Cliente, string? Fazenda, string? Empresa)
+        public List<_CadPasto> CadPasto(int LemonID, string? Fazenda, string? Empresa)
         {
             string? Emp = Empresa;
             string? Faz = Fazenda;
@@ -180,7 +180,7 @@ namespace ASPNET_API.Controllers.Maps
 
             //Get ConnectionString from access database
             ASP_UsuarioRepository AccessSQL = new ASP_UsuarioRepository();
-            AccessSQL.GetConnString(Cod_Cliente);
+            AccessSQL.GetConnString(LemonID);
 
             ConexaoBanco.SetStringPostgreSql(AccessSQL.HostBD, AccessSQL.PortaBD, AccessSQL.UsuarioBD, AccessSQL.SenhaBD, AccessSQL.NomeBD);
 
@@ -224,11 +224,11 @@ namespace ASPNET_API.Controllers.Maps
         }
 
         [HttpPut("PutAreaTalhao")]
-        public List<_CadAreaTalhao> PutAreaTalhao(int Cod_Cliente, int Cod_Grupo, string Usuario, [FromBody] string[] Lat, [FromBody] string[] Lng, int Setor, int Chun_CadTalhao, string TalhaoCor)
+        public List<_CadAreaTalhao> PutAreaTalhao(int LemonID, int Cod_Grupo, string Usuario, [FromBody] string[] Lat, [FromBody] string[] Lng, int Setor, int Chun_CadTalhao, string TalhaoCor)
         {
             //Get ConnectionString from access database
             ASP_UsuarioRepository AccessSQL = new ASP_UsuarioRepository();
-            AccessSQL.GetConnString(Cod_Cliente);
+            AccessSQL.GetConnString(LemonID);
             List<string> TesteLat = new List<string>();
             List<string> TesteLng = new List<string>();
             List<int> Ordem_Cadastro = new List<int>();

@@ -86,7 +86,7 @@ namespace ASPNET_API.Data
             using (OleDbCommand cmd = new OleDbCommand())
             {
                 cmd.Connection = (OleDbConnection)_conexao;
-                cmd.CommandText = "SELECT NomeDB, UsuarioDB, SenhaDB, HostDB, PortaDB FROM ASP_Usuario_Cliente WHERE CodigoCliente = " + Codigo + " GROUP BY NomeDB, UsuarioDB, SenhaDB, HostDB, PortaDB";
+                cmd.CommandText = "SELECT NomeDB, UsuarioDB, SenhaDB, HostDB, PortaDB FROM LemonUsers WHERE LemonID = " + Codigo + " GROUP BY NomeDB, UsuarioDB, SenhaDB, HostDB, PortaDB";
             }
             return 0;
         }

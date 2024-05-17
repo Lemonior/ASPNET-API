@@ -17,11 +17,11 @@ namespace ASPNET_API.Controllers.Verificacoes
         [HttpGet("MapsTrueFalse")]
         //Placeholder for now
         //Eventualmente separar em array de tables existentes/ausentes e gerar menu de acordo com módulos habilitados para o cliente
-        public List<_Maps> GetGrupo(int Cod_Cliente)
+        public List<_Maps> GetGrupo(int LemonID)
         {
             //Get ConnectionString from access database
             ASP_UsuarioRepository AccessSQL = new ASP_UsuarioRepository();
-            AccessSQL.GetConnString(Cod_Cliente);
+            AccessSQL.GetConnString(LemonID);
 
             ConexaoBanco.SetStringPostgreSql(AccessSQL.HostBD, AccessSQL.PortaBD, AccessSQL.UsuarioBD, AccessSQL.SenhaBD, AccessSQL.NomeBD);
 
@@ -31,11 +31,11 @@ namespace ASPNET_API.Controllers.Verificacoes
             return Conexao.readerClassList<_Maps>(cmd);
         }
         [HttpGet("GPSTrueFalse")]
-        public List<_Maps> GetGPS(int Cod_Cliente)
+        public List<_Maps> GetGPS(int LemonID)
         {
             //Get ConnectionString from access database
             ASP_UsuarioRepository AccessSQL = new ASP_UsuarioRepository();
-            AccessSQL.GetConnString(Cod_Cliente);
+            AccessSQL.GetConnString(LemonID);
 
             ConexaoBanco.SetStringPostgreSql(AccessSQL.HostBD, AccessSQL.PortaBD, AccessSQL.UsuarioBD, AccessSQL.SenhaBD, AccessSQL.NomeBD);
 

@@ -13,7 +13,7 @@ namespace ASPNET_API.Models.Menu
         public EnumStatus Status { get; set; }
         public string UF { get; set; }
         public string Cidade { get; set; }
-        public int CodigoCliente { get; set; }
+        public int LemonID { get; set; }
         public string NomeDB { get; set; }
         public string UsuarioDB { get; set; }
         public string SenhaDB { get; set; }
@@ -23,7 +23,7 @@ namespace ASPNET_API.Models.Menu
         public string? VersaoApp { get; set; }
         public void Op()
         {
-            CodCliente = CodigoCliente.ToString();
+            CodCliente = LemonID.ToString();
         }
 
         public enum EnumStatus

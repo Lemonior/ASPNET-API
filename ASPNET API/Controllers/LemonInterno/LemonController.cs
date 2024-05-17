@@ -14,12 +14,12 @@ namespace ASPNET_API.Controllers.Gerenciador
     public class LemonController : ControllerBase
     {
         [HttpGet("SenhaUsuario")]
-        public List<_SenhaUsuario> GetSenha(int Cod_Cliente, string Usuario)
+        public List<_SenhaUsuario> GetSenha(int LemonID, string Usuario)
         {
             string User = Usuario;
             //Get ConnectionString from access database
             UsuarioRepository AccessSQL = new UsuarioRepository();
-            AccessSQL.GetConnString(Cod_Cliente);
+            AccessSQL.GetConnString(LemonID);
 
             ConexaoBanco.SetStringPostgreSql(AccessSQL.HostDB, AccessSQL.PortaDB, AccessSQL.UsuarioDB, AccessSQL.SenhaDB, AccessSQL.NomeDB);
 
@@ -30,7 +30,7 @@ namespace ASPNET_API.Controllers.Gerenciador
         }
 
         [HttpGet("InfoUsuario")]
-        public List<_InfoUsuario> GetInfo(int Cod_Cliente, int ChUnUsuario)
+        public List<_InfoUsuario> GetInfo(int LemonID, int ChUnUsuario)
         {
             string ChUn = ChUnUsuario.ToString();
             if (ChUn == "0")
@@ -39,7 +39,7 @@ namespace ASPNET_API.Controllers.Gerenciador
             }
             //Get ConnectionString from access database
             UsuarioRepository AccessSQL = new UsuarioRepository();
-            AccessSQL.GetConnString(Cod_Cliente);
+            AccessSQL.GetConnString(LemonID);
 
             ConexaoBanco.SetStringPostgreSql(AccessSQL.HostDB, AccessSQL.PortaDB, AccessSQL.UsuarioDB, AccessSQL.SenhaDB, AccessSQL.NomeDB);
 

@@ -26,15 +26,15 @@ namespace ASPNET_API.Data
             using (OleDbCommand cmd = new OleDbCommand())
             {
                 cmd.Connection = (OleDbConnection)_conexao;
-                cmd.CommandText = "SELECT NomeBD, UsuarioBD, SenhaBD, HostBD, PortaBD FROM ASP_Usuario_Cliente WHERE CodigoCliente = " + Codigo + " GROUP BY NomeBD, UsuarioBD, SenhaBD, HostBD, PortaBD";
+                cmd.CommandText = "SELECT NomeBD, UsuarioBD, SenhaBD, HostBD, PortaBD FROM LemonUsers WHERE LemonID = " + Codigo + " GROUP BY NomeBD, UsuarioBD, SenhaBD, HostBD, PortaBD";
                 object x = cmd.ExecuteScalar();
-                cmd.CommandText = "SELECT UsuarioBD, SenhaBD, HostBD, PortaBD FROM ASP_Usuario_Cliente WHERE CodigoCliente = " + Codigo + " GROUP BY UsuarioBD, SenhaBD, HostBD, PortaBD";
+                cmd.CommandText = "SELECT UsuarioBD, SenhaBD, HostBD, PortaBD FROM LemonUsers WHERE LemonID = " + Codigo + " GROUP BY UsuarioBD, SenhaBD, HostBD, PortaBD";
                 object y = cmd.ExecuteScalar();
-                cmd.CommandText = "SELECT SenhaBD, HostBD, PortaBD FROM ASP_Usuario_Cliente WHERE CodigoCliente = " + Codigo + " GROUP BY SenhaBD, HostBD, PortaBD";
+                cmd.CommandText = "SELECT SenhaBD, HostBD, PortaBD FROM LemonUsers WHERE LemonID = " + Codigo + " GROUP BY SenhaBD, HostBD, PortaBD";
                 object z = cmd.ExecuteScalar();
-                cmd.CommandText = "SELECT HostBD, PortaBD FROM ASP_Usuario_Cliente WHERE CodigoCliente = " + Codigo + " GROUP BY HostBD, PortaBD";
+                cmd.CommandText = "SELECT HostBD, PortaBD FROM LemonUsers WHERE LemonID = " + Codigo + " GROUP BY HostBD, PortaBD";
                 object k = cmd.ExecuteScalar();
-                cmd.CommandText = "SELECT PortaBD FROM ASP_Usuario_Cliente WHERE CodigoCliente = " + Codigo + " GROUP BY PortaBD";
+                cmd.CommandText = "SELECT PortaBD FROM LemonUsers WHERE LemonID = " + Codigo + " GROUP BY PortaBD";
                 object w = cmd.ExecuteScalar();
                 NomeBD = x.ToString();
                 UsuarioBD = y.ToString();
@@ -52,7 +52,7 @@ namespace ASPNET_API.Data
             using (OleDbCommand cmd = new OleDbCommand())
             {
                 cmd.Connection = (OleDbConnection)_conexao;
-                cmd.CommandText = "SELECT NomeBD, UsuarioBD, SenhaBD, HostBD, PortaBD FROM ASP_Usuario_Cliente WHERE CodigoCliente = " + Codigo + " GROUP BY NomeBD, UsuarioBD, SenhaBD, HostBD, PortaBD";
+                cmd.CommandText = "SELECT NomeBD, UsuarioBD, SenhaBD, HostBD, PortaBD FROM LemonUsers WHERE LemonID = " + Codigo + " GROUP BY NomeBD, UsuarioBD, SenhaBD, HostBD, PortaBD";
             }
             return 0;
         }

@@ -16,9 +16,9 @@ namespace ASPNET_API.Data.Repositories.Menu
         /// <returns></returns>
         public List<Tb_Cliente> GetByUsuario(ASP_Usuario _Usuario)
         {
-            string query = "SELECT Codigo, Nome, Status, UF, Cidade, ASP_Usuario_Cliente.NomeDB, ASP_Usuario_Cliente.UsuarioDB, ASP_Usuario_Cliente.SenhaDB, ASP_Usuario_Cliente.HostDB, ASP_Usuario_Cliente.PortaDB" +
-                " FROM Tb_Cliente Inner Join ASP_Usuario_Cliente ON (ASP_Usuario_Cliente.CodigoCliente = Tb_Cliente.Codigo)" +
-                "WHERE ASP_Usuario_Cliente.ID_ASP_Usuario = @ID_ASP_Usuario " +
+            string query = "SELECT Codigo, Nome, Status, UF, Cidade, LemonUsers.NomeDB, LemonUsers.UsuarioDB, LemonUsers.SenhaDB, LemonUsers.HostDB, LemonUsers.PortaDB" +
+                " FROM Tb_Cliente Inner Join LemonUsers ON (LemonUsers.LemonID = Tb_Cliente.Codigo)" +
+                "WHERE LemonUsers.ID_ASP_Usuario = @ID_ASP_Usuario " +
                 "Order by Status, Codigo";
             var a = _conexao.Query<Tb_Cliente>(query, new { ID_ASP_Usuario = _Usuario.Id }).ToList();
 

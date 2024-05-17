@@ -14,11 +14,11 @@ namespace ASPNET_API.Controllers.Relatorios
     public class RelUtilsController : ControllerBase
     {
         [HttpGet("GetEmpresa")]
-        public List<_ListarEmpresa> GetGrupo(int Cod_Cliente)
+        public List<_ListarEmpresa> GetGrupo(int LemonID)
         {
             //Get ConnectionString from access database
             ASP_UsuarioRepository AccessSQL = new ASP_UsuarioRepository();
-            AccessSQL.GetConnString(Cod_Cliente);
+            AccessSQL.GetConnString(LemonID);
 
             ConexaoBanco.SetStringPostgreSql(AccessSQL.HostBD, AccessSQL.PortaBD, AccessSQL.UsuarioBD, AccessSQL.SenhaBD, AccessSQL.NomeBD);
 
@@ -29,11 +29,11 @@ namespace ASPNET_API.Controllers.Relatorios
         }
 
         [HttpGet("GetFazenda")]
-        public List<_ListarFazenda> GetSetor(int Cod_Cliente, int Cod_Grupo)
+        public List<_ListarFazenda> GetSetor(int LemonID, int Cod_Grupo)
         {
             //Get ConnectionString from access database
             ASP_UsuarioRepository AccessSQL = new ASP_UsuarioRepository();
-            AccessSQL.GetConnString(Cod_Cliente);
+            AccessSQL.GetConnString(LemonID);
 
             ConexaoBanco.SetStringPostgreSql(AccessSQL.HostBD, AccessSQL.PortaBD, AccessSQL.UsuarioBD, AccessSQL.SenhaBD, AccessSQL.NomeBD);
 
@@ -45,11 +45,11 @@ namespace ASPNET_API.Controllers.Relatorios
         }
 
         [HttpGet("GetPastoBaia")]
-        public List<_ListarPastoBaia> GetPB(int Cod_Cliente, int Cod_Grupo)
+        public List<_ListarPastoBaia> GetPB(int LemonID, int Cod_Grupo)
         {
             //Get ConnectionString from access database
             ASP_UsuarioRepository AccessSQL = new ASP_UsuarioRepository();
-            AccessSQL.GetConnString(Cod_Cliente);
+            AccessSQL.GetConnString(LemonID);
 
             ConexaoBanco.SetStringPostgreSql(AccessSQL.HostBD, AccessSQL.PortaBD, AccessSQL.UsuarioBD, AccessSQL.SenhaBD, AccessSQL.NomeBD);
 
@@ -69,11 +69,11 @@ namespace ASPNET_API.Controllers.Relatorios
         }
 
         [HttpGet("GetRegime")]
-        public List<_ListarRegime> GetReg(int Cod_Cliente)
+        public List<_ListarRegime> GetReg(int LemonID)
         {
             //Get ConnectionString from access database
             ASP_UsuarioRepository AccessSQL = new ASP_UsuarioRepository();
-            AccessSQL.GetConnString(Cod_Cliente);
+            AccessSQL.GetConnString(LemonID);
 
             ConexaoBanco.SetStringPostgreSql(AccessSQL.HostBD, AccessSQL.PortaBD, AccessSQL.UsuarioBD, AccessSQL.SenhaBD, AccessSQL.NomeBD);
 
@@ -84,11 +84,11 @@ namespace ASPNET_API.Controllers.Relatorios
         }
 
         [HttpGet("GetRetiro")]
-        public List<_ListarRetiro> GetRt(int Cod_Cliente)
+        public List<_ListarRetiro> GetRt(int LemonID)
         {
             //Get ConnectionString from access database
             ASP_UsuarioRepository AccessSQL = new ASP_UsuarioRepository();
-            AccessSQL.GetConnString(Cod_Cliente);
+            AccessSQL.GetConnString(LemonID);
 
             ConexaoBanco.SetStringPostgreSql(AccessSQL.HostBD, AccessSQL.PortaBD, AccessSQL.UsuarioBD, AccessSQL.SenhaBD, AccessSQL.NomeBD);
 

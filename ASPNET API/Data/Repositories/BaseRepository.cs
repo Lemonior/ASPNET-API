@@ -30,7 +30,7 @@ namespace ASPNET_API.Data.Repositories
 
         public T GetDatabaseConn(int id)
         {
-            return _conexao.QueryFirst<T>($"SELECT NomeDB, UsuarioDB, SenhaDB, HostDB, PortaDB FROM ASP_Usuario_Cliente WHERE ID_ASP_Usuario={id}");
+            return _conexao.QueryFirst<T>($"SELECT NomeDB, UsuarioDB, SenhaDB, HostDB, PortaDB FROM LemonUsers WHERE ID_ASP_Usuario={id}");
         }
 
     }
