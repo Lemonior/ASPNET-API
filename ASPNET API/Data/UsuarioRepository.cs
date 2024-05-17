@@ -29,15 +29,15 @@ namespace ASPNET_API.Data
             using (OleDbCommand cmd = new OleDbCommand())
             {
                 cmd.Connection = (OleDbConnection)_conexao;
-                cmd.CommandText = "SELECT NomeDB, UsuarioDB, SenhaDB, HostDB, PortaDB FROM TB_Cliente_Database WHERE Cliente = " + Codigo + " GROUP BY NomeDB, UsuarioDB, SenhaDB, HostDB, PortaDB";
+                cmd.CommandText = "SELECT NomeDB, UsuarioDB, SenhaDB, HostDB, PortaDB FROM LemonClients WHERE LemonID = " + Codigo + " GROUP BY NomeDB, UsuarioDB, SenhaDB, HostDB, PortaDB";
                 object x = cmd.ExecuteScalar();
-                cmd.CommandText = "SELECT UsuarioDB, SenhaDB, HostDB, PortaDB FROM TB_Cliente_Database WHERE Cliente = " + Codigo + " GROUP BY UsuarioDB, SenhaDB, HostDB, PortaDB";
+                cmd.CommandText = "SELECT UsuarioDB, SenhaDB, HostDB, PortaDB FROM LemonClients WHERE LemonID = " + Codigo + " GROUP BY UsuarioDB, SenhaDB, HostDB, PortaDB";
                 object y = cmd.ExecuteScalar();
-                cmd.CommandText = "SELECT SenhaDB, HostDB, PortaDB FROM TB_Cliente_Database WHERE Cliente = " + Codigo + " GROUP BY SenhaDB, HostDB, PortaDB";
+                cmd.CommandText = "SELECT SenhaDB, HostDB, PortaDB FROM LemonClients WHERE LemonID = " + Codigo + " GROUP BY SenhaDB, HostDB, PortaDB";
                 object z = cmd.ExecuteScalar();
-                cmd.CommandText = "SELECT HostDB, PortaDB FROM TB_Cliente_Database WHERE Cliente = " + Codigo + " GROUP BY HostDB, PortaDB";
+                cmd.CommandText = "SELECT HostDB, PortaDB FROM LemonClients WHERE LemonID = " + Codigo + " GROUP BY HostDB, PortaDB";
                 object k = cmd.ExecuteScalar();
-                cmd.CommandText = "SELECT PortaDB FROM TB_Cliente_Database WHERE Cliente = " + Codigo + " GROUP BY PortaDB";
+                cmd.CommandText = "SELECT PortaDB FROM LemonClients WHERE LemonID = " + Codigo + " GROUP BY PortaDB";
                 object w = cmd.ExecuteScalar();
                 NomeDB = x.ToString();
                 UsuarioDB = y.ToString();
