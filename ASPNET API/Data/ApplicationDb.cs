@@ -9,6 +9,8 @@ namespace ASPNET_API.Data
         /// Retorno de Conexão padrão
         /// </summary>
         /// <returns></returns>
+        
+        #region Previous method with fixed path
         //public static IDbConnection GetDefaultConnection()
         //{
         //    //pegando banco de dados dentro da pasta da applicacao
@@ -19,6 +21,7 @@ namespace ASPNET_API.Data
         //    connection.Open();
         //    return connection;
         //}
+        #endregion
 
         public static IDbConnection GetDefaultConnection()
         {
